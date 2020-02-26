@@ -1,128 +1,163 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>🌞 Kawaii Weather App 🌧</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap"
+      rel="stylesheet"
+    />
     <link href="style.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <form id="search-City-Form">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control typeACity" placeholder="Type a city..." autocomplete="off"
-                    autofocus="on" id="city-input" />
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary searchCityButton" type="submit" value="search">🔍</button>
-                </div>
-        </form>
+      <form id="search-City-Form">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control typeACity"
+            placeholder="Type a city..."
+            autocomplete="off"
+            autofocus="on"
+            id="city-input"
+          />
+          <div class="input-group-append">
+            <button
+              class="btn btn-outline-secondary searchCityButton"
+              type="submit"
+              value="search"
+            >
+              🔍
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
     <h1 id="dateTitle">
-        January 28th, 2020
+      January 28th, 2020
     </h1>
     <h2 id="city">
-        Lisbon, Portugal
+      Lisbon, Portugal
     </h2>
     <h2 id="dayAndTime">
-        Saturday - 14:53H
+      Saturday - 14:53H
     </h2>
     <div class="row">
-        <div class="col-6">
-            <img src="src/006-cloudy.png" class="card-img-top MainWeather" alt="cloudy-sun" />
-            <figcaption class="weather-caption">Cloudy</figcaption>
-        </div>
-        <div class="col-6">
-            <div class="card mb-3 border-0">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="src/019-wind-1.png" class="card-img WindImg" alt="Wind" />
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <p class="card-text wind-direction">NE</p>
-                        </div>
-                    </div>
-                </div>
+      <div class="col-6">
+        <img
+          src="src/006-cloudy.png"
+          class="card-img-top MainWeather"
+          alt="cloudy-sun"
+        />
+        <figcaption class="weather-caption">Cloudy</figcaption>
+      </div>
+      <div class="col-6">
+        <div class="card mb-3 border-0">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="src/019-wind-1.png"
+                class="card-img WindImg"
+                alt="Wind"
+              />
             </div>
-            <div class="card mb-3 border-0">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="src/humidity.png" class="card-img humidityImg" alt="Humidity" />
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <p class="card-text humidity-level">83%</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <p class="card-text wind-direction">NE</p>
+              </div>
             </div>
+          </div>
         </div>
+        <div class="card mb-3 border-0">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="src/humidity.png"
+                class="card-img humidityImg"
+                alt="Humidity"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <p class="card-text humidity-level">83%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-12">
-        <div class="row">
-            <div class="col-12">
-                <br />
-                <span class="current-temperature" id="current-temperature">11<span class="units"> <a href="#"
-                            id="celsius-convert-link">ºC</a><span id="current-divider-bar"> | </span><a href="#"
-                            id="fahrenheit-convert-link">F</a> </span></span>
-            </div>
+      <div class="row">
+        <div class="col-12">
+          <br />
+          <span class="current-temperature" id="current-temperature"
+            >11<span class="units">
+              <a href="#" id="celsius-convert-link">ºC</a
+              ><span id="current-divider-bar"> | </span
+              ><a href="#" id="fahrenheit-convert-link">F</a>
+            </span></span
+          >
         </div>
+      </div>
     </div>
     <div class="row">
-        <div class="col-12">
-            <p class="MaxMin">
-                <span class="maximum-temp">13º</span>
-                <span class="max-min-divider-bar">/</span>
-                <span class="minimum-temp"> 7º</span>
-            </p>
+      <div class="col-12">
+        <p class="MaxMin">
+          <span class="maximum-temp">13º</span>
+          <span class="max-min-divider-bar">/</span>
+          <span class="minimum-temp"> 7º</span>
+        </p>
+      </div>
+      <div class="card-group">
+        <div class="card prediction-img">
+          <img src="src/008-storm.png" class="card-img-top" alt="Storm" />
+          <div class="card-body">
+            <h5 class="card-title">13ºC</h5>
+            <p class="card-text">Sun, 26th</p>
+          </div>
         </div>
-        <div class="card-group">
-            <div class="card prediction-img">
-                <img src="src/008-storm.png" class="card-img-top" alt="Storm">
-                <div class="card-body">
-                    <h5 class="card-title">13ºC</h5>
-                    <p class="card-text">Sun, 26th</p>
-                </div>
-            </div>
-            <div class="card prediction-img">
-                <img src="src/014-heavy-rain.png" class="card-img-top" alt="Heavy Rain">
-                <div class="card-body">
-                    <h5 class="card-title">12ºC</h5>
-                    <p class="card-text">Mon, 27th</p>
-                </div>
-            </div>
-            <div class="card prediction-img">
-                <img src="src/013-rain.png" class="card-img-top" alt="Rain">
-                <div class="card-body">
-                    <h5 class="card-title">14ºC</h5>
-                    <p class="card-text">Tue, 28th</p>
-
-                </div>
-            </div>
-            <div class="card prediction-img">
-                <img src="src/004-wind.png" class="card-img-top" alt="Wind">
-                <div class="card-body">
-                    <h5 class="card-title">12ºC</h5>
-                    <p class="card-text">Wed, 29th</p>
-                </div>
-            </div>
-            <div class="card prediction-img">
-                <img src="src/002-sunny.png" class="card-img-top" alt="Sunny">
-                <div class="card-body">
-                    <h5 class="card-title">15ºC</h5>
-                    <p class="card-text">Thu, 30th</p>
-                </div>
-            </div>
+        <div class="card prediction-img">
+          <img
+            src="src/014-heavy-rain.png"
+            class="card-img-top"
+            alt="Heavy Rain"
+          />
+          <div class="card-body">
+            <h5 class="card-title">12ºC</h5>
+            <p class="card-text">Mon, 27th</p>
+          </div>
         </div>
-    </div>
-    </div>
+        <div class="card prediction-img">
+          <img src="src/013-rain.png" class="card-img-top" alt="Rain" />
+          <div class="card-body">
+            <h5 class="card-title">14ºC</h5>
+            <p class="card-text">Tue, 28th</p>
+          </div>
+        </div>
+        <div class="card prediction-img">
+          <img src="src/004-wind.png" class="card-img-top" alt="Wind" />
+          <div class="card-body">
+            <h5 class="card-title">12ºC</h5>
+            <p class="card-text">Wed, 29th</p>
+          </div>
+        </div>
+        <div class="card prediction-img">
+          <img src="src/002-sunny.png" class="card-img-top" alt="Sunny" />
+          <div class="card-body">
+            <h5 class="card-title">15ºC</h5>
+            <p class="card-text">Thu, 30th</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
