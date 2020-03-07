@@ -19,10 +19,14 @@ h2 {
   text-align: center;
 }
 
-.current-temperature {
+.currentTemperature {
   width: 130px;
   display: block;
   margin: 0 auto;
+  font-size: 48px;
+  font-weight: 700;
+  color: #971682;
+  text-align: center;
 }
 
 #celsius-convert-link,
@@ -51,13 +55,6 @@ h2 {
 .wind-direction,
 .humidity-level {
   font-size: 20px;
-}
-
-.current-temperature {
-  font-size: 48px;
-  font-weight: 700;
-  color: #971682;
-  text-align: center;
 }
 
 .MaxMin {
