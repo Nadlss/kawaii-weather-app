@@ -38,14 +38,12 @@ let weekDays = [
   "Saturday"
 ];
 
-// Feature #1
 let h1 = document.querySelector("#dateTitle");
 h1.innerHTML = `${months[month]} ${dayOfMonth}, ${year}`;
 
 let dayAndHour = document.querySelector("#dayAndTime");
 dayAndHour.innerHTML = `${weekDays[weekDay]} - ${hours}:${minutes}H`;
 
-// Feature #2
 function searchCity(event) {
   event.preventDefault();
   let cityElement = document.querySelector("#city");
@@ -55,7 +53,6 @@ function searchCity(event) {
 let searchForm = document.querySelector("#search-City-Form");
 searchForm.addEventListener("submit", searchCity);
 
-// Bonus Feature
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#current-temperature");
