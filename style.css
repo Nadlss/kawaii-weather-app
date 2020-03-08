@@ -1,5 +1,5 @@
 .structure {
-  max-width: 500px;
+  max-width: 550px;
   border: 5px solid #971682;
   padding: 30px;
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
@@ -26,11 +26,12 @@ h2 {
 
 .MainWeather {
   width: 150px;
+  padding-top: 0;
   display: block;
   margin: 0 auto;
 }
 
-.currentTemperature {
+#current-temperature-value {
   width: 130px;
   display: block;
   margin: 0 auto;
@@ -49,23 +50,26 @@ h2 {
 .weather-caption {
   text-align: center;
   font-size: 20px;
+  text-transform: capitalize;
 }
 
-.WindImg {
+.windImg {
   width: 50px;
+  padding: 22px 0;
   display: block;
   margin: 0 auto;
 }
 
 .humidityImg {
   width: 50px;
+  padding: 22px 0;
   display: block;
   margin: 0 auto;
 }
 
-.wind-direction,
-.humidity-level {
-  font-size: 20px;
+#wind,
+#humidity {
+  font-size: 24px;
 }
 
 .MaxMin {

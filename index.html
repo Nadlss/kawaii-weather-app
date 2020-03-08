@@ -43,8 +43,6 @@
       <h1 id="dateTitle">
         January 28th, 2020
       </h1>
-      <h2 id="city">
-        Lisbon, Portugal
       <h2>
         <span id="city">Lisbon</span><span class="country">, Portugal</span>
       </h2>
@@ -58,7 +56,9 @@
             class="card-img-top MainWeather img-fluid"
             alt="cloudy-sun"
           />
-          <figcaption class="weather-caption">Cloudy</figcaption>
+          <figcaption class="weather-caption" id="current-condition">
+            Cloudy
+          </figcaption>
         </div>
         <div class="col-6">
           <div class="card mb-3 border-0">
@@ -66,14 +66,15 @@
               <div class="col-md-4">
                 <img
                   src="src/019-wind-1.png"
-                  class="card-img WindImg"
+                  class="card-img windImg"
                   alt="Wind"
                 />
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <p class="card-text wind-direction">NE</p>
-                </div>
+                  <div class="card-text windSpeed">
+                    Wind speed: <p id="wind">10 Km/H</p>
+                  </div>
               </div>
             </div>
           </div>
@@ -88,7 +89,9 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <p class="card-text humidity-level">83%</p>
+                  <div class="card-text humidityPercentage">
+                    Humidity: <span id="humidity">83 %</span> 
+                  </div>
                 </div>
               </div>
             </div>
@@ -98,14 +101,14 @@
       <div class="col-12">
         <div class="row">
           <div class="col-12">
-            <br />
-            <span class="currentTemperature" id="current-temperature"
-              >11<span class="units">
+            <div class="currentTemperature">
+              <span id="current-temperature-value">11</span
+              ><span class="units">
                 <a href="#" id="celsius-convert-link">ºC</a
                 ><span id="current-divider-bar"> | </span
                 ><a href="#" id="fahrenheit-convert-link">F</a>
-              </span></span
-            >
+              </span>
+            </div>
           </div>
         </div>
       </div>
