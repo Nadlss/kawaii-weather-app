@@ -7,7 +7,9 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   let mainIconElement = document.querySelector("#mainIcon");
 
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = `${response.data.main.humidity} %`;
@@ -17,53 +19,53 @@ function displayTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   mainIconElement.setAttribute("alt", response.data.weather[0].description);
+
+  let now = new Date();
+
+  let dayOfMonth = now.getDate();
+  let month = now.getMonth();
+  let year = now.getFullYear();
+  let weekDay = now.getDay();
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+
+  let weekDays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+
+  let h1 = document.querySelector("#dateTitle");
+  h1.innerHTML = `${months[month]} ${dayOfMonth}, ${year}`;
+
+  let dayAndHour = document.querySelector("#dayAndTime");
+  dayAndHour.innerHTML = `Last updated: ${weekDays[weekDay]} - ${hours}:${minutes}H`;
 }
-
-let now = new Date();
-
-let dayOfMonth = now.getDate();
-let month = now.getMonth();
-let year = now.getFullYear();
-let weekDay = now.getDay();
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
-];
-
-let weekDays = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
-];
-
-let h1 = document.querySelector("#dateTitle");
-h1.innerHTML = `${months[month]} ${dayOfMonth}, ${year}`;
-
-let dayAndHour = document.querySelector("#dayAndTime");
-dayAndHour.innerHTML = `Last updated: ${weekDays[weekDay]} - ${hours}:${minutes}H`;
 
 function search(city) {
   let apiKey = "655cc338645c52514e1df31b37348c78";
@@ -84,19 +86,22 @@ searchForm.addEventListener("submit", handleSubmit);
 
 function convertToFahrenheit(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temperature");
-  let temperature = temperatureElement.innerHTML;
-  temperature = Number(temperature);
-  temperatureElement.innerHTML = Math.round(temperature * 1.8 + 32);
+  let temperatureElement = document.querySelector("#current-temperature-value");
+  celsiusConvertLink.classList.remove("active");
+  fahrenheitConvertLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temperature");
-  let temperature = temperatureElement.innerHTML;
-  temperature = Number(temperature);
-  temperatureElement.innerHTML = Math.round((temperature - 32) / 1.8);
+  celsiusConvertLink.classList.add("active");
+  fahrenheitConvertLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#current-temperature-value");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
+
+let celsiusTemperature = null;
 
 let fahrenheitConvertLink = document.querySelector("#fahrenheit-convert-link");
 fahrenheitConvertLink.addEventListener("click", convertToFahrenheit);

@@ -40,6 +40,14 @@ h2 {
   color: #971682;
   text-align: center;
 }
+.currentTemperature .active {
+  color: #000000;
+  cursor: default;
+}
+
+.currentTemperature .active {
+  text-decoration: none;
+}
 
 #celsius-convert-link,
 #fahrenheit-convert-link,
