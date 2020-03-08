@@ -5,11 +5,18 @@ function displayTemperature(response) {
   let descriptionElement = document.querySelector("#current-condition");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
+  let mainIconElement = document.querySelector("#mainIcon");
+
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = `${response.data.main.humidity} %`;
   windElement.innerHTML = `${response.data.wind.speed} KmH`;
+  mainIconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  mainIconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "655cc338645c52514e1df31b37348c78";
@@ -61,7 +68,7 @@ let h1 = document.querySelector("#dateTitle");
 h1.innerHTML = `${months[month]} ${dayOfMonth}, ${year}`;
 
 let dayAndHour = document.querySelector("#dayAndTime");
-dayAndHour.innerHTML = `${weekDays[weekDay]} - ${hours}:${minutes}H`;
+dayAndHour.innerHTML = `Last updated: ${weekDays[weekDay]} - ${hours}:${minutes}H`;
 
 function searchCity(event) {
   event.preventDefault();
