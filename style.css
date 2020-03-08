@@ -1,6 +1,11 @@
 .structure {
   width: 500px;
-  padding-top: 20px;
+  border: 2px solid #971682;
+  padding: 30px;
+  border-radius: 25px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
 }
 
 body {
@@ -17,6 +22,12 @@ h2 {
   color: #971682;
   font-size: 28px;
   text-align: center;
+}
+
+.MainWeather {
+  width: 150px;
+  display: block;
+  margin: 0 auto;
 }
 
 .currentTemperature {
@@ -77,14 +88,17 @@ h2 {
   color: #1da2ca;
   text-align: center;
 }
-.card-group {
+.weatherPredictionGrid {
   width: 500px;
   align-content: center;
+  text-align: center;
 }
 .card {
   padding: 5px;
   border: 0;
 }
-.prediction-img {
-  width: 80px;
+.weather-image-prediction {
+  width: 60px;
+  display: block;
+  margin: 0 auto;
 }
