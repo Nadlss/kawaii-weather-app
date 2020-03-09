@@ -1,3 +1,23 @@
+let now = new Date();
+let dayOfMonth = now.getDate();
+let year = now.getFullYear();
+
+let months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];
+let month = months[now.getMonth()];
+
 function formatDate(timestamp) {
   let now = new Date(timestamp);
 
@@ -11,7 +31,7 @@ function formatDate(timestamp) {
     "Saturday"
   ];
   let day = weekDays[now.getDay()];
-  return `${day} ${formatHours(timestamp)}`;
+  return `Last updated: ${day} ${formatHours(timestamp)}`;
 }
 
 function formatHours(timestamp) {
@@ -30,27 +50,29 @@ function formatHours(timestamp) {
 
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#current-temperature-value");
+  let completeDateElement = document.querySelector("#dateTitle");
   let cityElement = document.querySelector("#city");
   let countryElement = document.querySelector("#country");
   let descriptionElement = document.querySelector("#current-condition");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-  let dateElement = document.querySelector("#dayAndTime");
+  let dayAndTimeElement = document.querySelector("#dayAndTime");
   let maxTemp = document.querySelector("#max-temp");
   let minTemp = document.querySelector("#min-temp");
-  let mainIconElement = document.querySelector("#weather-icon");
+  let mainIconElement = document.querySelector("#mainIcon");
 
   celsiusTemperature = response.data.main.temp;
 
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  completeDateElement.innerHTML = `${month} ${dayOfMonth}, ${year}`;
   cityElement.innerHTML = response.data.name;
   countryElement.innerHTML = response.data.sys.country;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = `${response.data.main.humidity}%`;
   windElement.innerHTML = `${Math.round(response.data.wind.speed)} Km/H`;
+  dayAndTimeElement.innerHTML = formatDate(response.data.dt * 1000);
   maxTemp.innerHTML = `${Math.round(response.data.main.temp_max)}º`;
   minTemp.innerHTML = `${Math.round(response.data.main.temp_min)}º`;
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   mainIconElement.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -125,4 +147,4 @@ fahrenheitConvertLink.addEventListener("click", convertToFahrenheit);
 let celsiusConvertLink = document.querySelector("#celsius-convert-link");
 celsiusConvertLink.addEventListener("click", convertToCelsius);
 
-search("New York");
+search("Tokyo");
