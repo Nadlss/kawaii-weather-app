@@ -6,6 +6,7 @@
   display: block;
   margin: 0 auto;
   margin-top: 30px;
+  align-content: center;
 }
 
 body {
@@ -24,7 +25,13 @@ h2 {
   text-align: center;
 }
 
-.MainWeather {
+#dayAndTime {
+  color: #450f55;
+  font-size: 20px;
+  text-align: center;
+}
+
+.mainWeatherIcon {
   width: 150px;
   padding-top: 0;
   display: block;
@@ -80,8 +87,10 @@ h2 {
   font-size: 24px;
 }
 
-.MaxMin {
-  text-align: center;
+.maxMin {
+  align-content: center;
+  display: block;
+  margin: 0 auto;
 }
 
 .maximum-temp {
@@ -100,17 +109,14 @@ h2 {
   color: #1da2ca;
   text-align: center;
 }
-.weatherPredictionGrid {
-  width: 500px;
-  align-content: center;
+
+#forecast {
   text-align: center;
+  color: #450f55;
 }
-.card {
-  padding: 5px;
-  border: 0;
-}
-.weather-image-prediction {
-  width: 60px;
+
+.forecastImg {
+  width: 70px;
   display: block;
   margin: 0 auto;
 }
