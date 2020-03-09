@@ -43,21 +43,19 @@
       <h1 id="dateTitle">
         January 28th, 2020
       </h1>
-      <h2>
-        <span id="city">Lisbon</span><span class="country">, Portugal</span>
-      </h2>
-      <h2 id="dayAndTime"><span id="weekDay">
-        Saturday</span><p id="hour"> 14:53H</p>
+      <h2><span id="city">Lisbon</span>, <span id="country">Portugal</span></h2>
+      <h2 id="dayAndTime">
+        Last updated: <span id="weekDay"> Saturday</span> - 14:53H
       </h2>
       <div class="row">
         <div class="col-6">
           <img
-            src=""
-            class="card-img-top MainWeather img-fluid"
+            src="src/013-rain.png"
+            class="card-img-top mainWeatherIcon img-fluid"
             id="mainIcon"
           />
           <figcaption class="weather-caption" id="current-condition">
-            Cloudy
+            Rainy
           </figcaption>
         </div>
         <div class="col-6">
@@ -73,24 +71,27 @@
               <div class="col-md-8">
                 <div class="card-body">
                   <div class="card-text windSpeed">
-                    Wind speed: <p id="wind">10 Km/H</p>
+                    Wind speed:
+                    <p id="wind">10 Km/H</p>
                   </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card mb-3 border-0">
-            <div class="row no-gutters">
-              <div class="col-md-4">
-                <img
-                  src="src/humidity.png"
-                  class="card-img humidityImg"
-                  alt="Humidity"
-                />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <div class="card-text humidityPercentage">
-                    Humidity: <span id="humidity">83 %</span> 
+            <div class="card mb-3 border-0">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img
+                    src="src/humidity.png"
+                    class="card-img humidityImg"
+                    alt="Humidity"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <div class="card-text humidityPercentage">
+                      Humidity:
+                      <p id="humidity">83 %</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -98,83 +99,32 @@
           </div>
         </div>
       </div>
-      <div class="col-12">
-        <div class="row">
-          <div class="col-12">
-            <div class="currentTemperature">
-              <span id="current-temperature-value">11</span
-              ><span class="units">
-                <a href="#" id="celsius-convert-link" class="active">ºC</a
-                ><span id="current-divider-bar"> | </span
-                ><a href="#" id="fahrenheit-convert-link">ºF</a>
-              </span>
-            </div>
+      <div class="currentTemperature">
+        <div id="current-temperature-value">11</div>
+        <span class="units">
+          <a href="#" id="celsius-convert-link" class="active">ºC</a
+          ><span id="current-divider-bar"> | </span
+          ><a href="#" id="fahrenheit-convert-link">ºF</a>
+        </span>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="maxMin">
+            <span class="maximum-temp" id="max-temp">13º</span>
+            <span class="max-min-divider-bar">/</span>
+            <span class="minimum-temp" id="min-temp"> 7º</span>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12">
-          <p class="MaxMin">
-            <span class="maximum-temp">13º</span>
-            <span class="max-min-divider-bar">/</span>
-            <span class="minimum-temp"> 7º</span>
-          </p>
-        </div>
-        <div class="card-group weatherPredictionGrid">
-          <div class="card">
-            <img
-              src="src/008-storm.png"
-              class="card-img-top weather-image-prediction"
-              alt="Storm"
-            />
-            <div class="card-body">
-              <h5 class="card-title">13ºC</h5>
-              <p class="card-text">Sun, 26th</p>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="src/014-heavy-rain.png"
-              class="card-img-top weather-image-prediction"
-              alt="Heavy Rain"
-            />
-            <div class="card-body">
-              <h5 class="card-title">12ºC</h5>
-              <p class="card-text">Mon, 27th</p>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="src/013-rain.png"
-              class="card-img-top weather-image-prediction"
-              alt="Rain"
-            />
-            <div class="card-body">
-              <h5 class="card-title">14ºC</h5>
-              <p class="card-text">Tue, 28th</p>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="src/004-wind.png"
-              class="card-img-top weather-image-prediction"
-              alt="Wind"
-            />
-            <div class="card-body">
-              <h5 class="card-title">12ºC</h5>
-              <p class="card-text">Wed, 29th</p>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="src/002-sunny.png"
-              class="card-img-top weather-image-prediction"
-              alt="Sunny"
-            />
-            <div class="card-body">
-              <h5 class="card-title">15ºC</h5>
-              <p class="card-text">Thu, 30th</p>
-            </div>
+      <div class="row weather-forecast" id="forecast">
+        <div class="col-3">
+          <h3>
+            05:00
+          </h3>
+          <img src="src/012-snow.png" class="forecastImg" />
+          <div class="weather-forecast-temperature">
+            <strong>16º </strong> 15º
           </div>
         </div>
       </div>
