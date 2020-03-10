@@ -7,10 +7,13 @@
   margin: 0 auto;
   margin-top: 30px;
   align-content: center;
+  background-color: #ffffff;
 }
 
 body {
   font-family: "Baloo Bhai", cursive;
+  /* background-color: #e3f8d2fd; */
+  background-image: linear-gradient(-20deg, #f3defa 0%, #eefcdb 100%);
 }
 
 h1 {
