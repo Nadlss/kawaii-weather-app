@@ -45,7 +45,7 @@ function formatHours(timestamp) {
     minutes = `0${minutes}`;
   }
 
-  return `${hours}:${minutes}`;
+  return `${hours}: ${minutes}`;
 }
 
 function displayTemperature(response) {
