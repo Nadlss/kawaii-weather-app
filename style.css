@@ -33,33 +33,9 @@ h2 {
 
 .mainWeatherIcon {
   width: 150px;
-  padding-top: 0;
+  padding: 0;
   display: block;
   margin: 0 auto;
-}
-
-#current-temperature-value {
-  width: 130px;
-  display: block;
-  margin: 0 auto;
-  font-size: 48px;
-  font-weight: 700;
-  color: #971682;
-  text-align: center;
-}
-.currentTemperature .active {
-  color: #000000;
-  cursor: default;
-}
-
-.currentTemperature .active {
-  text-decoration: none;
-}
-
-#celsius-convert-link,
-#fahrenheit-convert-link,
-#current-divider-bar {
-  font-size: 30px;
 }
 
 .weather-caption {
@@ -68,16 +44,10 @@ h2 {
   text-transform: capitalize;
 }
 
-.windImg {
-  width: 50px;
-  padding: 22px 0;
-  display: block;
-  margin: 0 auto;
-}
-
+.windImg,
 .humidityImg {
   width: 50px;
-  padding: 22px 0;
+  padding: 22px 0 0 0;
   display: block;
   margin: 0 auto;
 }
@@ -87,8 +57,37 @@ h2 {
   font-size: 24px;
 }
 
+#current-temperature-value {
+  font-size: 48px;
+  font-weight: 700;
+  color: #971682;
+  text-align: right;
+  margin: 0;
+  padding-right: 0;
+}
+
+.currentTemperature .active {
+  color: #000000;
+  cursor: default;
+}
+
+.currentTemperature .active:hover {
+  text-decoration: none;
+}
+
+.units {
+  text-align: left;
+  padding-left: 0;
+}
+
+#celsius-convert-link,
+#fahrenheit-convert-link,
+#current-divider-bar {
+  font-size: 30px;
+}
+
 .maxMin {
-  align-content: center;
+  text-align: center;
   display: block;
   margin: 0 auto;
 }
@@ -97,7 +96,6 @@ h2 {
   font-size: 32px;
   font-weight: 500;
   color: #e740bd;
-  text-align: center;
 }
 
 .max-min-divider-bar {
@@ -107,7 +105,6 @@ h2 {
   font-size: 32px;
   font-weight: 500;
   color: #1da2ca;
-  text-align: center;
 }
 
 #forecast {
