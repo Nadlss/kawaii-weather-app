@@ -25,6 +25,10 @@ h2 {
   text-align: center;
 }
 
+.searchImg {
+  width: 25px;
+}
+
 #dayAndTime {
   color: #450f55;
   font-size: 20px;
@@ -112,10 +116,10 @@ h2 {
   color: #450f55;
 }
 
-.forecastImg {
-  width: 70px;
+.weather-forecast img {
   display: block;
   margin: 0 auto;
+  max-width: 70px;
 }
 
 .creatorLink {
