@@ -75,7 +75,7 @@ function displayTemperature(response) {
   minTemp.innerHTML = `${Math.round(response.data.main.temp_min)}º`;
   mainIconElement.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://eager-meitner-dd6cbe.netlify.com/src/${response.data.weather[0].icon}@2x.png`
   );
   mainIconElement.setAttribute("alt", response.data.weather[0].description);
 }
@@ -91,7 +91,7 @@ function displayForecast(response) {
     <div class="col-3">
               <h3>${formatHours(forecast.dt * 1000)}</h3>
               <img
-                src="https://openweathermap.org/img/wn/${
+                src="https://eager-meitner-dd6cbe.netlify.com/src/${
                   forecast.weather[0].icon
                 }@2x.png"
               />
